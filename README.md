@@ -3,19 +3,20 @@
 <!-- TOC -->
   * [Links](#links)
   * [Examples](#examples)
-  * [Commands](#commands)
+    * [`01_hello_aws`](#01helloaws)
 <!-- TOC -->
 
 ## Links
-https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-study-003
-https://www.udemy.com/course/terraform-beginner-to-advanced
+* https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-study-003
+* https://www.udemy.com/course/terraform-beginner-to-advanced
 
 ## Examples
-* 01_hello_aws
+### `01_hello_aws`
   * Creates ec2 and iam user.
-* 
+  * commands:
+    * `terraform init`
+    * `terraform plan`
+    * `terraform destroy`
 
-## Commands
-terraform init
-terraform plan
+
 
