@@ -6,6 +6,7 @@
     * [01_hello_aws](#01helloaws)
     * [02_hello_github](#02hellogithub)
     * [03_count](#03count)
+    * [04_lifecycle](#04lifecycle)
 <!-- TOC -->
 
 ## Links
@@ -39,12 +40,32 @@
   * Environment variables
   * The `terraform.tfvars` file, if present.
   * The `terraform.tfvars.json` file, if present.
-  * Any `*.auto.tfvars` or `*.auto.tfvars.json` files, processed in lexical order of their filenames.
+  * Any `*.auto.tfvars` or `*.auto.tfvars.json files, processed in lexical order of their filenames.
   * Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by an HCP Terraform workspace.)
 
 ![image](https://github.com/user-attachments/assets/b75f5814-6310-40ea-b8f3-85f88688c227)
 
+### 04_lifecycle
+* Code:
+```hcl
+resource "aws_instance" "my-ec2-instance" {
+  ami           = "ami-015875403620174eb"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "my-instance-behavior-02"
+  }
+   lifecycle {
+     ignore_changes = [tags]
+   }
+}
+```
 
+* Test ignore_changes, step to test:
+  1. Run `terraform apply` to create an EC2.
+  2. Update manually the name of the EC2 instance from the console.
+  3. Run `terraform apply` and check the name has no been updated back to the original name.  
+
+![image](https://github.com/user-attachments/assets/fe6373ac-9ed5-46af-b2b3-be1da6dab834)
 
 
 
