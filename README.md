@@ -5,6 +5,7 @@
   * [Examples](#examples)
     * [01_hello_aws](#01helloaws)
     * [02_hello_github](#02hellogithub)
+    * [03_count](#03count)
 <!-- TOC -->
 
 ## Links
@@ -19,11 +20,33 @@
   * `terraform init`
   * `terraform plan`
   * `terraform destroy`
+
 ### 02_hello_github
 * Terraform GitHub provider.
 * Create and remove GitHub repository.
-* Using variable to store the GitHub PAT (Personal Access Token)  
+* Using variable to store the GitHub PAT (Personal Access Token)
 
-![img.png](https://private-user-images.githubusercontent.com/725743/382467164-4c0f7131-9bd4-4078-884e-3c17e9e27012.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzA1NDY1NTksIm5iZiI6MTczMDU0NjI1OSwicGF0aCI6Ii83MjU3NDMvMzgyNDY3MTY0LTRjMGY3MTMxLTliZDQtNDA3OC04ODRlLTNjMTdlOWUyNzAxMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTAyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTEwMlQxMTE3MzlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MThhZjZjZTY2OGEwMGFkOGNiZGY3N2EwZGEwZDE4YzUzOWJmYTYyYWMxMWRmNmIxMjJmNGM2ZTBiZWMwMmRmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.7ThFfOdukzdyS8dCKlKI3oFzc2N9Mo_4zpMux_Htwoc)
+![image](https://github.com/user-attachments/assets/4c0f7131-9bd4-4078-884e-3c17e9e27012)
+
+### 03_count
+* Example of `count` to create users on AWS.
+* User names defined in a list.
+* Commands:
+  * `terraform apply -auto-approve` : will `terraform.tfvars` to get the vars
+  * `terraform apply -var="environment=env_var"`  
+* Var asignment prececende (later sources taking precedence over earlier ones):
+  * Environment variables
+  * The terraform.tfvars file, if present.
+  * The terraform.tfvars.json file, if present.
+  * Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
+  * Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by an HCP Terraform workspace.)
+
+![image](https://github.com/user-attachments/assets/b75f5814-6310-40ea-b8f3-85f88688c227)
+
+
+
+
+
+
 
 
