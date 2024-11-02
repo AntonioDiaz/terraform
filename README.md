@@ -30,15 +30,16 @@
 
 ### 03_count
 * Example of `count` to create users on AWS.
-* User names defined in a list.
+* User names defined in a variable of type list.
 * Commands:
   * `terraform apply -auto-approve` : will `terraform.tfvars` to get the vars
-  * `terraform apply -var="environment=env_var"`  
+  * `terraform apply -var="environment=env_var"`
+  * `terraform apply -var-file="environments/prod.tfvars"`
 * Var asignment prececende (later sources taking precedence over earlier ones):
   * Environment variables
-  * The terraform.tfvars file, if present.
-  * The terraform.tfvars.json file, if present.
-  * Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
+  * The `terraform.tfvars` file, if present.
+  * The `terraform.tfvars.json` file, if present.
+  * Any `*.auto.tfvars` or `*.auto.tfvars.json` files, processed in lexical order of their filenames.
   * Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by an HCP Terraform workspace.)
 
 ![image](https://github.com/user-attachments/assets/b75f5814-6310-40ea-b8f3-85f88688c227)
