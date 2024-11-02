@@ -7,6 +7,7 @@
     * [02_hello_github](#02hellogithub)
     * [03_count](#03count)
     * [04_lifecycle](#04lifecycle)
+    * [05_import](#05import)
 <!-- TOC -->
 
 ## Links
@@ -71,10 +72,10 @@ resource "aws_instance" "my-ec2-instance" {
 Terraform import can automatically create the terraform configuration files for the resources you want to import.
 https://developer.hashicorp.com/terraform/language/import
 Steps:
-1. Create manual or use an existing AWS resource, for this example a Security Group 
+1. Create manual or use an existing AWS resource, for this example a Security Group  
 ![image](https://github.com/user-attachments/assets/9576730f-cf3e-4a8c-8c53-79b509799b55)   
 
-2. Create the tf to import to terraform the resources
+2. Create the tf to import to terraform the resources  
     ```hcl
     provider "aws" {
       region = "eu-west-3"
@@ -85,9 +86,10 @@ Steps:
       id = "sg-03787de81847a4a35"
     }
     ```
-3. Import resources, this will create a terraform with the resources:
-    `terraform plan -generate-config-out=my_sg.tf`
-    Terraform generate content:
+3. Import resources, this will create the terraform code with the resources:  
+    `terraform plan -generate-config-out=my_sg.tf`  
+
+    Terraform generate content:  
     ```hcl
     # __generated__ by Terraform from "sg-03787de81847a4a35"
     resource "aws_security_group" "my-security-group" {
