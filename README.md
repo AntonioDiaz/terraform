@@ -9,6 +9,7 @@
     * [04 - lifecycle](#04---lifecycle)
     * [05 - import](#05---import)
     * [06 - backend](#06---backend)
+    * [07 - terraform module](#07---terraform-module)
 <!-- TOC -->
 
 ## Links
@@ -152,6 +153,22 @@ terraform {
 ````
 ![image](https://github.com/user-attachments/assets/2d2d8ede-6547-47bb-b8d5-9b992bc6d5a3)
 
+### 07 - terraform module
+* Terraform module can be defined on 
+  * GitHub
+  * HTTP URLs
+  * S3 Bucket
+  * Terraform Registry
+  * Local paths
+* Reference module
+````hcl
+module "ec2" {
+    source = "../modules/ec2"
+    version = "20.11.1"    
+}
+````
+* Variables to avoid hardcoded attributes.
+![image](https://github.com/user-attachments/assets/d742fd45-0520-430e-987e-1ea6cf1c144c)
 
 
 
