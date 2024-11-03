@@ -8,6 +8,7 @@
     * [03 - count](#03---count)
     * [04 - lifecycle](#04---lifecycle)
     * [05 - import](#05---import)
+    * [06 - backend](#06---backend)
 <!-- TOC -->
 
 ## Links
@@ -134,9 +135,22 @@ Steps:
       vpc_id                 = "vpc-54b5b33d"
     }
     ```
-4. Update resources on terraform
+4. Update resources on terraform  
     `terraform apply -auto-approve`
 
+### 06 - backend
+* Create the bucket called "bucket.terraform.state.adiaz"
+* To store the state file in remote.
+````hcl
+terraform {
+  backend "s3" {
+    bucket = "bucket.terraform.state.adiaz"
+    key    = "network/terraform.tfstate"
+    region = "eu-west-3"
+  }
+}
+````
+![image](https://github.com/user-attachments/assets/2d2d8ede-6547-47bb-b8d5-9b992bc6d5a3)
 
 
 
